@@ -1,0 +1,9 @@
+module github.com/hofstadter-io/hofmod-types
+
+cue v0.4.3
+
+require (
+	github.com/hofstadter-io/hof v0.6.6
+)
+
+replace github.com/hofstadter-io/hof => ../../hof
