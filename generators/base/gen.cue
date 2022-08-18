@@ -11,6 +11,7 @@ import (
 	// Enforce common schema for all generators
 	Datamodel: dm.#Datamodel
 	Module: string
+	FieldEnricher: _
 
 	// todo, gen specific config...
 	//   - language specific config
@@ -22,8 +23,14 @@ import (
 
 	// pass user inputs to code gen
 	In: {
-		"Datamodel": Datamodel
 		"Module": Module
+		"Datamodel": Datamodel & {
+			for m,M in Datamodel.Models {
+				for f,F in M.Fields {
+				 Models: (m): Fields: (f): (FieldEnricher & { field: F }).output
+				}
+			}
+		}
 	}
 
 	// default gen input locations
