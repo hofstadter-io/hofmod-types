@@ -1,4 +1,4 @@
-{{ .Field.Name }} {{ .Field.Type }} `{{- template "field-tags" . -}}`
+{{ .Field.Name }} {{ .Field.GoType }} `{{- template "field-tags" . -}}`
 
 {{- define "field-tags" -}}
 {{- template "field-tags-json" . -}}

@@ -1,7 +1,6 @@
 {{- with .Reln -}}
 {{- $Type := .Type -}}
-{{- if eq $Type "uuid" }}{{ $Type = "uuid.UUID" }}{{ end -}}
-{{- if .Pointer }}{{ $Type = (concat "*" .Type) }}{{ end -}}
+{{- if .Pointer }}{{ $Type = (concat "*" $Type) }}{{ end -}}
 {{- .Name }} {{/* spacing */ -}}
 {{- if eq .Reln "BelongsTo" }}{{ $Type }}{{ end -}}
 {{- if eq .Reln "HasOne" }}{{ $Type }}{{ end -}}

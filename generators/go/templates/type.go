@@ -2,9 +2,12 @@
 package {{ .Package }}
 
 import (
+	"time"
+
 	"github.com/google/uuid"
 )
 
+var _ = time.Time
 var _ = uuid.UUID
 
 type {{ .Model.Name }} struct {
