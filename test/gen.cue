@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/hofstadter-io/hofmod-types/generators/go"
+	"github.com/hofstadter-io/hofmod-types/generators/py"
 )
 
 
@@ -11,4 +12,9 @@ import (
 Go: go.#Generator & {
 	@gen(go)
 	Outdir: "out/go"
+}
+
+Py: py.#Generator & {
+	@gen(py)
+	Outdir: "out/py"
 }
